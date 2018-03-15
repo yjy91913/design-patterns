@@ -1,5 +1,7 @@
 package com.ziroom.patterns.factory.func;
 
+import com.ziroom.patterns.factory.Milk;
+
 /**
  * 描述:
  * ${DESCRIPTION}
@@ -9,7 +11,8 @@ package com.ziroom.patterns.factory.func;
  * @create 2018-03-14 18:12
  */
 public class FactoryTest {
-
-    //**抽象工厂
-
+    public static void main(String[] args) {
+        Factory factory = new MengLiuFactory();
+        Milk milk = factory.getMilk();
+    }
 }

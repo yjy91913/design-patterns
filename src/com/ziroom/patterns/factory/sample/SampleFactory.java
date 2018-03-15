@@ -14,7 +14,6 @@ import com.ziroom.patterns.factory.Yili;
  * @create 2018-03-14 16:57
  */
 public class SampleFactory {
-
     public Milk getMilk(String name){
         switch (name) {
             case "特仑苏":return new TeLunSu();
