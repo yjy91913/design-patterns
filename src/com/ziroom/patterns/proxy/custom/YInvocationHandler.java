@@ -1,5 +1,6 @@
 package com.ziroom.patterns.proxy.custom;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -7,6 +8,6 @@ import java.lang.reflect.Method;
  */
 public interface YInvocationHandler {
 
-    Object invoke(Object proxy, Method method, Object[] args);
+    Object invoke(Object proxy, Method method, Object[] args) throws InvocationTargetException, IllegalAccessException;
 
 }

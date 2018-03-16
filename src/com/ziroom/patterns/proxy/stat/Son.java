@@ -13,6 +13,7 @@ import lombok.Data;
 @Data
 public class Son implements Person {
 
+    @Override
     public void findLove() {
         System.out.println("相亲");
     }
