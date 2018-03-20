@@ -1,6 +1,6 @@
-package com.ziroom.patterns.strategy.pay;
+package com.ziroom.patterns.strategy;
 
-import com.ziroom.patterns.strategy.pay.payport.Payment;
+import com.ziroom.patterns.strategy.payport.Payment;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

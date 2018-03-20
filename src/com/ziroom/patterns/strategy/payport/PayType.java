@@ -1,4 +1,4 @@
-package com.ziroom.patterns.strategy.pay.payport;
+package com.ziroom.patterns.strategy.payport;
 
 /**
  * Created by Yangjy on 2018/3/17.

@@ -1,4 +1,4 @@
-package com.ziroom.patterns.strategy.pay;
+package com.ziroom.patterns.strategy;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;

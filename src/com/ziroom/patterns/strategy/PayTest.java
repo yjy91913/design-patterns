@@ -1,6 +1,6 @@
-package com.ziroom.patterns.strategy.pay;
+package com.ziroom.patterns.strategy;
 
-import com.ziroom.patterns.strategy.pay.payport.PayType;
+import com.ziroom.patterns.strategy.payport.PayType;
 
 /**
  * Created by Yangjy on 2018/3/17.
