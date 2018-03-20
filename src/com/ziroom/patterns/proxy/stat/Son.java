@@ -1,6 +1,5 @@
 package com.ziroom.patterns.proxy.stat;
 
-import lombok.Data;
 
 /**
  * 描述:
@@ -10,7 +9,6 @@ import lombok.Data;
  * @version 1.0.0
  * @date 2018-03-15
  */
-@Data
 public class Son implements Person {
 
     @Override

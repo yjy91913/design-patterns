@@ -1,8 +1,5 @@
 package com.ziroom.patterns.proxy.stat;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * 描述:
@@ -12,9 +9,6 @@ import lombok.NoArgsConstructor;
  * @version 1.0.0
  * @date 2018-03-15
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Father {
 
     private Son son;

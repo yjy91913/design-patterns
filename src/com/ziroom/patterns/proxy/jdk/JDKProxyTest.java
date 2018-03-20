@@ -21,10 +21,10 @@ public class JDKProxyTest {
         person.findLove();
         System.out.println(person.getClass());
 
+        //从JVM拿到临时生成的解码文件,把这个字节码文件储存起来
         byte[] $proxy0s = ProxyGenerator.generateProxyClass("$proxy0", new Class[]{person.getClass()});
-        FileOutputStream os = new FileOutputStream("F:\\idea\\qwe\\$proxy0.class");
+        FileOutputStream os = new FileOutputStream("E:\\$proxy0.class");
         os.write($proxy0s);
-
         /**
          * 原理
          * 1.拿到被代理对象的引用,并且获取其接口通过反射获取

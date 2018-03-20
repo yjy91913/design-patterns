@@ -18,6 +18,5 @@ public class Test {
         System.out.println(new TeLunSu().getName());
         //小作坊式生产模式,用户不在关系,把生产过程隐藏了
         System.out.println(new SampleFactory().getMilk("特仑苏").getName());
-
     }
 }
