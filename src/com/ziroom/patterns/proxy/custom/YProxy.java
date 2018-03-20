@@ -11,6 +11,7 @@ import java.lang.reflect.Method;
 
 /**
  * Created by Yangjy on 2018/3/16.
+ * 手写实现JDK Proxy类 动态代理
  */
 public class YProxy {
 
