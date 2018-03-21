@@ -1,6 +1,7 @@
 package com.ziroom.patterns.template;
 
 import com.ziroom.patterns.template.dao.MemberDao;
+import com.ziroom.patterns.template.entity.Member;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,10 +11,11 @@ import java.util.List;
  */
 public class MemberDaoTest {
 
-    public static void main(String[] args) throws SQLException {
-        MemberDao memberDao = new MemberDao(null);
+    public static void main(String[] args) throws Exception {
+        MemberDao memberDao = new MemberDao();
 
-        List<Object> query = memberDao.query();
+        List<?> query = memberDao.query();
+
 
 
 

@@ -16,7 +16,7 @@ import java.util.List;
  * @version 1.0.0
  * @date 2018-03-20
  */
-public abstract class JdbcTemplate {
+public class JdbcTemplate {
 
     private DataSource dataSource;
 
@@ -39,8 +39,18 @@ public abstract class JdbcTemplate {
         return preparedStatement.executeQuery();
     }
 
-    public List<?> excuteQuery(String sql,Object [] values) throws SQLException {
-        List<Object> result = null;
+    private List<?> parseResult(ResultSet rs,RowMapper<?> rowMapper) throws Exception {
+
+        int rowNumber =1;
+        List result = new ArrayList<>();
+        while (rs.next()){
+            result.add(rowMapper.mapRow(rs,rowNumber++));
+        }
+        return result;
+    }
+
+    public List<?> excuteQuery(String sql ,RowMapper<?> rowMapper ,Object[] values ) throws Exception {
+        List<?> result = null;
         Connection conn = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
@@ -53,29 +63,35 @@ public abstract class JdbcTemplate {
             //preparedStatement.set
             //执行语句集,获得结果集
             rs = this.executeQuery(preparedStatement,null);
-            result = new ArrayList<>();
             //解析语句集
-            int rowNumber =1;
-
-            while (rs.next()){
-                result.add(processResult(rs,rowNumber++));
-            }
-
+            result = parseResult(rs, rowMapper);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             //关闭结果集
-            rs.close();
+            closeResultSet(rs);
             //关闭语句集
-            preparedStatement.close();
+            closeStatement(preparedStatement);
             //关闭连接
-            conn.close();
+            closeConnection(conn);
         }
 
         return result;
     }
 
+    private void closeConnection(Connection conn) throws SQLException {
+        conn.close();
+    }
 
-    public abstract Object processResult(ResultSet rs,int rowNumber) throws SQLException, Exception;
+    private void closeStatement(PreparedStatement preparedStatement) throws SQLException {
+        preparedStatement.close();
+    }
+
+    private void closeResultSet(ResultSet rs) throws SQLException {
+        rs.close();
+    }
+
+
+
 
 }
