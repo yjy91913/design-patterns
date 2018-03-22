@@ -17,7 +17,6 @@ public class MemberDao {
     private JdbcTemplate jdbcTemplate = new JdbcTemplate(null);
 
 
-
     /*@Override
     public Object processResult(ResultSet rs, int rowNumber) throws Exception {
         Member member = new Member();
